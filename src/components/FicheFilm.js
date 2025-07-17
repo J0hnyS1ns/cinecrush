@@ -33,8 +33,8 @@ const Movie = () => {
             .then((res) => res.json())
             .then((data) => {
                 setFicheFilm(data)
-                if (data.genres?.[2]?.id) {
-                    sameCategory(data.genres[2].id, data.id);
+                if (data.genres?.[0]?.id) {
+                    sameCategory(data.genres[0].id, data.id);
                 }
             })
             .catch((err) => console.error("Error :", err));
@@ -100,39 +100,42 @@ const Movie = () => {
 
     return (
         <div className="container mt-4">
-            
-                {ficheFilm.title ? (
-                    <div className="d-flex gap-5">
-                        <div className="">
-                            <img
-                                src={`https://image.tmdb.org/t/p/w500${ficheFilm.poster_path}`}
-                                alt={ficheFilm.title}
-                                className="" />
+
+            {ficheFilm.title ? (
+                <div className="d-flex gap-5">
+                    <div className="">
+                        <img
+                            src={ficheFilm.poster_path ? `https://image.tmdb.org/t/p/w500${ficheFilm.poster_path}`
+                                : require("../assets/Placeholder/Placeholder.png")}
+                            alt={ficheFilm.title}
+                            className="placeholder2" />
+                    </div>
+                    <div className="">
+                        <span>{ficheFilm.title} <i className="bi bi-heart"></i></span>
+                        <span>{stars(ficheFilm.vote_average)}</span>
+                        <div className="mb-2">
+                            <span> {ficheFilm.genres?.[0]?.name} </span> |
+                            <span> {formatDate(ficheFilm.release_date)} </span>
                         </div>
-                        <div className="">
-                            <span>{ficheFilm.title} <i className="bi bi-heart"></i></span>
-                            <span>{stars(ficheFilm.vote_average)}</span>
-                            <div className="mb-2">
-                                <span> {ficheFilm.genres?.[2]?.name} </span> |
-                                <span> {formatDate(ficheFilm.release_date)} </span>
-                            </div>
-                            <p> {ficheFilm.overview} </p>
-                            <div className="d-flex">
-                                {acteurs.slice(0, 4).map((acteur) => (
-                                    <div key={acteur.id} className="" onClick={() => history.push(`/acteur/${acteur.id}`)} style={{ cursor: "pointer" }}>
-                                        <img
-                                            src={`https://image.tmdb.org/t/p/w200${acteur.profile_path}`}
-                                            alt={acteur.title}
-                                            className="d-flex" />
-                                        <span className=""> {acteur.name} </span>
-                                    </div>
-                                ))}
-                            </div>
+                        <p> {ficheFilm.overview} </p>
+                        <div className="d-flex">
+                            {acteurs.slice(0, 4).map((acteur) => (
+                                <div key={acteur.id} className="" onClick={() => history.push(`/acteur/${acteur.id}`)} style={{ cursor: "pointer" }}>
+                                    <img
+                                        src={acteur.profile_path
+                                            ? `https://image.tmdb.org/t/p/w200${acteur.profile_path}`
+                                            : require("../assets/Placeholder/Placeholder.png")}
+                                        alt={acteur.title}
+                                        className="d-flex placeholder3" />
+                                    <span className=""> {acteur.name} </span>
+                                </div>
+                            ))}
                         </div>
                     </div>
-                ) : (
-                    <p>Loading...</p>
-                )}
+                </div>
+            ) : (
+                <p>Loading...</p>
+            )}
 
 
             {sameCategory.length > 0 && (
@@ -143,10 +146,12 @@ const Movie = () => {
                     <Slider {...settings}>
                         {sameCategory.map((movie) => (
                             <div key={movie.id} className="" onClick={() => handleClick(movie.id)} style={{ cursor: "pointer" }}>
-                                <img
-                                    src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
+                                <img 
+                                    src={movie.poster_path
+                                        ? `https://image.tmdb.org/t/p/w300${movie.poster_path}`
+                                        : require("../assets/Placeholder/Placeholder.png") }
                                     alt={movie.title}
-                                    className="" />
+                                    className="placeholder1" />
                             </div>
                         ))}
                     </Slider>

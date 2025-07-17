@@ -62,9 +62,11 @@ const FicheActeur = () => {
         <div className="container">
             {acteur.name ? (
                 <div className="d-flex">
-                    <img src={`https://image.tmdb.org/t/p/w300${acteur.profile_path}`}
+                    <img src={acteur.profile_path
+                        ? `https://image.tmdb.org/t/p/w500${acteur.profile_path}`
+                        : require("../assets/Placeholder/Placeholder.png")}
                         alt={acteur.title}
-                        className="d-flex" />
+                        className="d-flex placeholder2" />
                     <div>
                         <h1> {acteur.name} </h1>
                         <p> {acteur.biography}</p>
@@ -82,9 +84,11 @@ const FicheActeur = () => {
                         {sameActor.map((actor) => (
                             <div key={actor.id} className="" onClick={() => handleClick(actor.id)} style={{ cursor: "pointer" }}>
                                 <img
-                                    src={`https://image.tmdb.org/t/p/w300${actor.poster_path}`}
+                                    src={actor.poster_path
+                                        ? `https://image.tmdb.org/t/p/w300${actor.poster_path}`
+                                        : require("../assets/Placeholder/Placeholder.png") }      
                                     alt={actor.title}
-                                    className="" />
+                                    className="placeholder1" />
                             </div>
                         ))}
                     </Slider>
