@@ -1,6 +1,22 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
+import { useState } from "react";
 
 const Navigation = () => {
+
+    const [searchTerm, setSearchTerm] = useState("");
+    const history = useHistory();
+
+    const handleSearch = () => {
+        if (searchTerm.trim() !== "") {
+            history.push(`/Recherche?q=${encodeURIComponent(searchTerm)}`);
+            setSearchTerm("");
+        }
+    };
+
+    const handleKeyDown = (e) => {
+        if (e.key === "Enter") handleSearch();
+    };
+
     return (
         <div className="bgcolor">
             <div className="container">
@@ -18,8 +34,14 @@ const Navigation = () => {
                     </div>
 
                     <div className="input-group d-flex align-items-center" style={{ width: 450 }}>
-                        <input type="text" className="form-control border-end-0" placeholder="Rechercher" />
-                        <span className="input-group-text bg-white">
+                        <input
+                            type="text"
+                            className="form-control border-end-0"
+                            placeholder="Search"
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                            onKeyDown={handleKeyDown} />
+                        <span className="input-group-text bg-white" onClick={handleSearch} style={{ cursor: "pointer" }}>
                             <i className="bi bi-search"></i>
                         </span>
                         <span className="ms-4" style={{ height: 30 }}>
@@ -30,6 +52,6 @@ const Navigation = () => {
             </div>
         </div>
     )
-}
+};
 
 export default Navigation;

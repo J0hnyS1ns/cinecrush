@@ -5,6 +5,7 @@ import Categories from "./pages/Categories";
 import FicheFilm from "./pages/FicheFilm";
 import Acteur from "./pages/FicheActeur";
 import APropos from "./pages/APropos";
+import Recherche from "./pages/Recherche";
 
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/movie/:id" exact component={FicheFilm} />
         <Route path="/acteur/:id" exact component={Acteur} />
         <Route path="/About" exact component={APropos} />
+        <Route path="/Recherche" exact component={Recherche} />
       </Switch>
     </BrowserRouter>
   )
