@@ -83,7 +83,7 @@ const FicheActeur = () => {
                             <div key={actor.id} className="" onClick={() => handleClick(actor.id)} style={{ cursor: "pointer" }}>
                                 <img
                                     src={`https://image.tmdb.org/t/p/w300${actor.poster_path}`}
-                                    alt={actor.name}
+                                    alt={actor.title}
                                     className="" />
                             </div>
                         ))}
