@@ -69,6 +69,7 @@ const About = () => {
                     <h2>About <span className="">{teams[activeIndex].name}</span></h2>
                     <p className="">{teams[activeIndex].about}</p>
                     <p className="">"{teams[activeIndex].quote}"</p>
+                    <p> Allo crisse </p>
                 </div>
             )}
         </div>
