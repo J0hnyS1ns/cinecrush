@@ -67,7 +67,7 @@ const Search = () => {
                                         ? `https://image.tmdb.org/t/p/w300${movie.poster_path}`
                                         : require("../assets/Placeholder/Placeholder.png")}
                                     alt={movie.title} 
-                                    className="placeholder d-flex" />
+                                    className="placeholder" />
                             </div>
                         ))}
                     </div>
