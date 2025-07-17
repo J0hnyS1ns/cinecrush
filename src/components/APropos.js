@@ -26,7 +26,7 @@ const teams = [
 ];
 
 const About = () => {
-    const [activeIndex, setActiveIndex] = useState(2);
+    const [activeIndex, setActiveIndex] = useState(0);
 
     const settings = {
         centerMode: true,
@@ -35,7 +35,7 @@ const About = () => {
         slidesToShow: 3,
         slidesToScroll: 2,
         arrows: true,
-        initialSlide: 3,
+        initialSlide: 0,
         speed: 500,
         beforeChange: (oldIndex, newIndex) => {
             setActiveIndex(newIndex);
