@@ -1,0 +1,24 @@
+.carousel-top {
+
+        img {
+            width: 100%;
+            height: 500px;
+            display: block;
+        }
+    }
+
+
+.carousel-top .slick-dots {
+    bottom: 15px;
+}
+
+.carousel-top .slick-dots li button:before {
+    font-size: 15px;
+    color: white;
+    opacity: 0.5;
+}
+
+.carousel-top .slick-dots li.slick-active button:before {
+    opacity: 1;
+    color: white;
+}

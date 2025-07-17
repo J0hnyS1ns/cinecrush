@@ -1,0 +1,46 @@
+.headerImages {
+    position: relative;
+}
+
+.category-nom2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+}
+
+.catImage {
+    width: 100%;
+    height: 445px;
+}
+
+.containerCategories {
+    margin-top: 50px;
+    display: flex;
+    gap: 30px;
+    cursor: pointer;
+}
+
+.categoriesMovies {
+    border: solid 3px #001F29;
+    height: 515px;
+    padding: 25px 30px 0 0;
+}
+
+.selectedMovies {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.posterMovies img {
+    width: 100%;
+}
