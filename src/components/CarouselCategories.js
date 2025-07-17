@@ -101,7 +101,7 @@ const CarouselCategories = () => {
             image: require("../assets/CarouselCategories/Western.jpg")
         }
     ];
-    
+
 
     const settings = {
         dots: false,
@@ -122,29 +122,27 @@ const CarouselCategories = () => {
         ],
     };
     return (
-    <div className="container-fluid">
-        <Slider {...settings}>
-            {categories.map((cat) => {
-                const categoryImage = category.find(c => c.id === cat.id)?.image;
-                return (
-                    <div key={cat.id} className="category-carte px-2">
-                        {categoryImage && (
-                            <div className="img-container">
-                                <img
-                                    src={categoryImage}
-                                    alt={cat.name}
-                                    className="category-image"
-                                />
-                                {/* Tu peux aussi ajouter un texte ici si tu veux */}
-                            </div>
-                        )}
-                        <h3 className="category-nom">{cat.name}</h3>
-                    </div>
-                );
-            })}
-        </Slider>
-    </div>
-);
+        <div className="container-fluid">
+            <Slider {...settings}>
+                {categories.map((cat) => {
+                    const categoryImage = category.find(c => c.id === cat.id)?.image;
+                    return (
+                        <div key={cat.id} className="category-carte px-2">
+                            {categoryImage && (
+                                <div className="img-container">
+                                    <img
+                                        src={categoryImage}
+                                        alt={cat.name}
+                                        className="category-image" />
+                                </div>
+                            )}
+                            <h3 className="category-nom">{cat.name}</h3>
+                        </div>
+                    );
+                })}
+            </Slider>
+        </div>
+    );
 
 };
 
