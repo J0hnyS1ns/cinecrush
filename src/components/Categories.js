@@ -5,6 +5,8 @@ const CategoriesPage = () => {
     const [movies, setMovies] = useState([]);
     const [selectedGenreId, setSelectedGenreId] = useState(null);
     const [genres, setGenres] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 9;
     const history = useHistory();
 
     const options = {
@@ -30,10 +32,12 @@ const CategoriesPage = () => {
 
     useEffect(() => {
         if (selectedGenreId) {
-            fetch(
-                `https://api.themoviedb.org/3/discover/movie?with_genres=${selectedGenreId}&language=en-US`, options)
+            fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=${selectedGenreId}&language=en-US`, options)
                 .then((res) => res.json())
-                .then((data) => setMovies(data.results))
+                .then((data) => {
+                    setMovies(data.results);
+                    setCurrentPage(1);
+                })
                 .catch((err) => console.error("Error movies :", err));
         }
     }, [selectedGenreId]);
@@ -42,6 +46,16 @@ const CategoriesPage = () => {
 
     const handleClick = (id) => {
         history.push(`/movie/${id}`);
+    }
+
+    const indexOfLastMovie = currentPage * itemsPerPage;
+    const indexOfFirstMovie = indexOfLastMovie - itemsPerPage;
+    const currentMovies = movies.slice(indexOfFirstMovie, indexOfLastMovie);
+    const totalPages = Math.ceil(movies.length / itemsPerPage);
+
+    const pages = [];
+    for (let i = 1; i <= totalPages; i++) {
+        pages.push(i);
     }
 
     return (
@@ -61,7 +75,10 @@ const CategoriesPage = () => {
                         {genres.map((genre) => (
                             <li
                                 key={genre.id}
-                                onClick={() => setSelectedGenreId(genre.id)}
+                                onClick={() => {
+                                    setSelectedGenreId(genre.id);
+                                    setCurrentPage(1);
+                                }}
                                 className={selectedGenreId === genre.id ? "active" : ""}>
                                 {genre.name}
                             </li>
@@ -70,14 +87,23 @@ const CategoriesPage = () => {
                 </div>
                 <div>
                     <div className="selectedMovies">
-                        {movies.slice(0, 9).map((movie) => (
+                        {currentMovies.map((movie) => (
                             <div key={movie.id} className="posterMovies" onClick={() => handleClick(movie.id)}
                                 style={{ cursor: "pointer" }}>
                                 <img
                                     src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                                    alt={movie.title}
-                                />
+                                    alt={movie.title} />
                             </div>
+                        ))}
+                    </div>   
+                    <div className="">
+                        {pages.map((pageNumber) => (
+                            <button
+                                key={pageNumber}
+                                onClick={() => setCurrentPage(pageNumber)}
+                                className="">
+                                {pageNumber}
+                            </button>
                         ))}
                     </div>
                 </div>
