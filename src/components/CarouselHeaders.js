@@ -31,17 +31,20 @@ const CarouselHeaders = () => {
         pauseOnHover: false,
     };
 
-    return (
-        <div className="carousel-top">
-            <Slider {...settings}>
-                {slides.map((item) => (
-                    <div key={item.id} className="top-slide">
-                        <img src={item.image} alt={item.title} />
-                    </div>
-                ))}
-            </Slider>
+return (
+  <div className="carousel-top">
+    <Slider {...settings}>
+      {slides.map((item) => (
+        <div key={item.id} className="top-slide">
+          <div className="img-container">
+            <img src={item.image} alt={item.title} />
+          </div>
         </div>
-    );
+      ))}
+    </Slider>
+  </div>
+);
+
 };
 
 export default CarouselHeaders;
