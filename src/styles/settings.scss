@@ -30,3 +30,54 @@ cursor: pointer;
 a:visited {
     color: $color-3;
     }
+
+    .carousel-wrapper {
+  position: relative;
+  overflow: hidden; /* masque ce qui dépasse */
+}
+
+.carousel-wrapper::before,
+.carousel-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 200px; /* largeur du dégradé */
+  height: 100%;
+  z-index: 23; /* au-dessus des slides */
+  pointer-events: none; /* ne bloque pas les clics */
+}
+
+.carousel-wrapper::before {
+  left: 0;
+  background: linear-gradient(to left, rgba(0, 18, 20, 0), rgba(0, 18, 20, 1));
+ width: 200px;
+}
+
+.carousel-wrapper::after {
+  right: 0;
+  background: linear-gradient(to right, rgba(0, 18, 20, 0), rgba(0, 18, 20, 1));
+
+}
+
+.custom-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 99;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: rgba(255,255,255,0.8);
+}
+
+.custom-arrow.next {
+  right: 10px;
+}
+
+.custom-arrow.prev {
+  left: 10px;
+}
+
+.custom-arrow i {
+  font-size: 30px;
+}

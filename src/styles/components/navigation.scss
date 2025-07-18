@@ -1,7 +1,59 @@
-.bgcolor {
-    background-color: #001F29;
+.bgcolor-flou {
+    background-color: rgba(0, 31, 41, 0.8);
+    backdrop-filter: blur(10px);
+    /* Flou d’arrière-plan */
+    -webkit-backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 5px 3px 8px rgba(0, 0, 0, 0.2);
 }
+
 .coeur {
     font-size: 25px;
     color: #FFC8BE;
+}
+
+.input-group {
+  background-color: rgba(1, 63, 81, 0.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.fond-search {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  color: white;
+}
+
+.fond-loupe {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+}
+
+.bi-search {
+  color: $gris;
+  font-size: 20px;
+  padding-right: 3px;
+}
+
+.fond-search:focus {
+  background-color: transparent;
+  color: white;
+  outline: none;
+  box-shadow: none;
+  padding-left: 20px;
+}
+
+.navlink{
+    font-size: 22px;
+    font-weight: 500;
 }

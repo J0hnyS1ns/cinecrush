@@ -33,15 +33,22 @@ const CarouselHeaders = () => {
 
 return (
   <div className="carousel-top">
-    <Slider {...settings}>
-      {slides.map((item) => (
+    <div className="overlay-text">
+      <h1 className="headertitle">
+        Check out the <br/> <span className="corailp"> TOP-RATED </span> SERIES!
+      </h1>
+      <button className="buttonborder">See more</button>
+    </div>
+        <Slider {...settings}>
+            {slides.map((item) => (
         <div key={item.id} className="top-slide">
           <div className="img-container">
             <img src={item.image} alt={item.title} />
           </div>
         </div>
-      ))}
+          ))}
     </Slider>
+    
   </div>
 );
 

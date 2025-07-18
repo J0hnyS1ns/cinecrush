@@ -18,9 +18,9 @@ const Navigation = () => {
     };
 
     return (
-        <div className="bgcolor">
+        <div className="bgcolor-flou">
             <div className="container">
-                <nav className="d-flex align-items-center navbar">
+                <nav className="d-flex align-items-center navbar py-3">
                     <div className="d-flex align-items-center gap-5">
                         <NavLink exact to="/" activeClassName="nav-active" className="nav-link p-0">
                             <img src="../assets/Logo/logo.svg" alt="logo" style={{ height: "40px" }} />
@@ -33,21 +33,21 @@ const Navigation = () => {
                         </NavLink>
                     </div>
 
-                    <div className="input-group d-flex align-items-center" style={{ width: 450 }}>
+                    <div className="input-group d-flex align-items-center" style={{ width: 380 }}>
+
                         <input
                             type="text"
-                            className="form-control border-end-0"
-                            placeholder="Search"
+                            className="form-control fond-search py-2"
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                             onKeyDown={handleKeyDown} />
-                        <span className="input-group-text bg-white" onClick={handleSearch} style={{ cursor: "pointer" }}>
+                        <span className="input-group-text fond-loupe" onClick={handleSearch} style={{ cursor: "pointer" }}>
                             <i className="bi bi-search"></i>
                         </span>
-                        <span className="ms-4" style={{ height: 30 }}>
-                            <i className="bi bi-heart-fill coeur"></i>
-                        </span>
                     </div>
+                    <span className="ms-4" style={{ height: 30 }}>
+                        <i className="bi bi-heart-fill coeur"></i>
+                    </span>
                 </nav>
             </div>
         </div>

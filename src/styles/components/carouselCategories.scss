@@ -1,26 +1,28 @@
+
 .category-carte {
-    cursor: pointer;
-    position: relative;
+  cursor: pointer;
+  position: relative;
 }
 
 .category-nom {
-    position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-weight: bold;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $gris;
+  font-weight: bold;
 }
 
 .category-image {
-    height: 150px;
-    width: 100%;
-      display: block;
-      object-fit: cover;
+  height: 220px;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  text-shadow: 5px 3px 8px rgba(0, 0, 0, 0.2);
 }
 
 .img-container {
@@ -36,6 +38,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* voile noir à 30% d'opacité */
+  background-color: rgba(0, 0, 0, 0.6);
+  /* voile noir à 30% d'opacité */
   pointer-events: none;
 }
