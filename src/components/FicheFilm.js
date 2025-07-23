@@ -249,7 +249,7 @@ const Movie = () => {
                         : require("../assets/Placeholder/Placeholder.png")
                     }
                     alt={movie.title}
-                    className="placeholder1"
+                    className="placeholder1 category-carte"
                   />
                 </div>
               ))}

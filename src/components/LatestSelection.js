@@ -84,7 +84,7 @@ const LatestSelection = () => {
               <img
                 src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
                 alt={movie.title}
-                className="latest-image mx-auto"
+                className="latest-image mx-auto category-carte"
               />
             </div>
           ))}

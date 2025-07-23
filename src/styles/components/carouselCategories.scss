@@ -2,6 +2,7 @@
 .category-carte {
   cursor: pointer;
   position: relative;
+    transition: transform 0.3s ease;
 }
 
 .category-nom {
@@ -15,6 +16,12 @@
   justify-content: center;
   color: $gris;
   font-weight: bold;
+    z-index: 3;
+     transition: all 0.3s ease;
+}
+
+.category-carte:hover .img-container::after {
+  background-color:rgb(255, 200, 190,0.3); 
 }
 
 .category-image {
@@ -23,6 +30,7 @@
   display: block;
   object-fit: cover;
   text-shadow: 5px 3px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
 .img-container {
@@ -39,6 +47,24 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
-  /* voile noir à 30% d'opacité */
   pointer-events: none;
+   transition: background-color 0.3s ease;
+}
+
+.category-carte:hover {
+  transform: scale(1.02);
+  z-index: 2;
+}
+
+.category-carte:hover .category-image {
+  filter: grayscale(100%);
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.5);
+
+}
+
+.category-carte:hover .category-nom {
+  color: black;
+  font-weight: 800;
+  text-shadow: 1px 1px 8px white;
+  transition: color 0.3s ease;
 }

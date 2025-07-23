@@ -92,7 +92,7 @@ const TopRated = () => {
               <img
                 src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
                 alt={movie.title}
-                className="top-rated-image mx-auto"
+                className="top-rated-image mx-auto category-carte"
               />
             </div>
           ))}
