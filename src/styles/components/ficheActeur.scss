@@ -1,0 +1,16 @@
+.descriptionacteur {
+    color: $gris;
+    font-size: 15px;
+    max-width: 84%;
+     text-align: justify;
+}
+
+.grayscale {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+   
+}
+
+.actor {
+    box-shadow: -25px -25px 0px $gris;
+}
