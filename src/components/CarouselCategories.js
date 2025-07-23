@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 // Flèche droite

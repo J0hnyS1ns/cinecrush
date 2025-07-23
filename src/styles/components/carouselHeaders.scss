@@ -68,20 +68,6 @@
     pointer-events: auto;
   }
 
-  .buttonborder {
-    text-transform: uppercase;
-    border: solid 4px $corailf;
-    padding: 10px 74px;
-    color: $corailf;
-    z-index: 10;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 63px;
-    font-weight: bold;
-    font-size: 25px;
-    margin-top: 50px;
-    box-shadow: 5px 3px 8px rgba(0, 0, 0, 0.2);
-    text-shadow: 5px 3px 8px rgba(0, 0, 0, 0.2);
-  }
+  
 
 }
