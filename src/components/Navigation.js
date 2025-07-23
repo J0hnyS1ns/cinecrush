@@ -20,7 +20,8 @@ const Navigation = () => {
     return (
         <div className="bgcolor-flou">
             <div className="container">
-                <nav className="d-flex align-items-center navbar py-3">
+               <nav className="d-flex flex-wrap align-items-center navbar py-3">
+
                     <div className="d-flex align-items-center gap-5">
                         <NavLink exact to="/" activeClassName="nav-active" className="nav-link p-0">
                             <img src="../assets/Logo/logo.svg" alt="logo" style={{ height: "40px" }} />
@@ -33,7 +34,7 @@ const Navigation = () => {
                         </NavLink>
                     </div>
 
-                    <div className="input-group d-flex align-items-center" style={{ width: 380 }}>
+                    <div className="input-group d-flex align-items-center search-bar">
 
                         <input
                             type="text"

@@ -3,12 +3,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100px;
-    height: 100px;
+    width: 107px;
+    height: 107px;
 }
 
 .reseaux {
-    font-size: 25px;
+    font-size: 30px;
     color: #FFC8BE;
 }
 
@@ -16,10 +16,23 @@
     color: #FC7658;
 }
 
+.slogan-part1, .slogan-part2{
+    font-weight: 600;
+    font-size: 22px;
+    font-style: italic;
+}
 .slogan-part1 {
     color: #FFC8BE;
 }
 
 .slogan-part2 {
     color: #FC7658;
+}
+
+.footer{
+    height: 250px;
+    display:flex;
+    align-items: center;
+    background-color: #001F29;
+    margin-top: 80px;
 }
