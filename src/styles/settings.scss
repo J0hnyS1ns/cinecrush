@@ -211,10 +211,13 @@ body {
         display: block;
         filter: grayscale(100%);
         transition: transform 0.3s ease;
+        
     }
 
     &:hover .img-inside {
         transform: scale(1.05);
+;
+        
     }
 }
 
@@ -233,4 +236,10 @@ body {
 .synopsis {
     margin-top: 24px;
     margin-bottom: 30px;
+}
+
+.contrast:hover{
+ 
+  filter: contrast(150%);
+
 }

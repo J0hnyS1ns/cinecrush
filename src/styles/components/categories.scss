@@ -142,6 +142,7 @@ ul li.unselected:hover {
     .img-container {
       img.movie-image {
         filter: grayscale(100%);
+        
       }
 
       &::after {

@@ -91,7 +91,7 @@ const FicheActeur = () => {
                   : require("../assets/Placeholder/Placeholder.png")
               }
               alt={acteur.name}
-              className="placeholder2 reflection"
+              className="placeholder2 reflection grayscale"
             />
           </div>
 
