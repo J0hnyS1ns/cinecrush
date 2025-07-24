@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
+import { useHistory } from "react-router-dom";
 
 // Flèche droite
 const NextArrow = ({ onClick }) => (
@@ -18,6 +19,7 @@ const PrevArrow = ({ onClick }) => (
 
 const CarouselCategories = () => {
   const [categories, setCategories] = useState([]);
+  const history = useHistory();
 
   useEffect(() => {
     const options = {
@@ -80,6 +82,13 @@ const CarouselCategories = () => {
     ],
   };
 
+  const handleClick = (id, name) => {
+    history.push({
+      pathname: "/Categories",
+      state: { genreId: id, genreName: name },
+    });
+  };
+
   return (
     <div className="container-fluid">
       <div className="carousel-wrapper">
@@ -87,7 +96,7 @@ const CarouselCategories = () => {
           {categories.map((cat) => {
             const categoryImage = category.find((c) => c.id === cat.id)?.image;
             return (
-              <div key={cat.id} className="category-carte px-2">
+              <div key={cat.id} className="category-carte px-2" onClick={() => handleClick(cat.id, cat.name)} style={{ cursor: "pointer" }} >
                 {categoryImage && (
                   <div className="img-container">
                     <img

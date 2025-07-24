@@ -60,7 +60,7 @@ const Movie = () => {
         if (data.results && data.results.length > 0) {
           // prendre la première vidéo type trailer
           const trailer = data.results.find(v => v.type === "Trailer" && v.site === "YouTube");
-          if(trailer) setTrailerKey(trailer.key);
+          if (trailer) setTrailerKey(trailer.key);
         }
       })
       .catch((err) => console.error("Error :", err));
@@ -179,7 +179,20 @@ const Movie = () => {
             </span>
             <span className="ratingfilm">{stars(ficheFilm.vote_average)}</span>
             <div className="mb-2 dateetgenre">
-              <span className="genrefilm"> {ficheFilm.genres?.[0]?.name} </span>{" "}
+              <span
+                className="genrefilm"
+                onClick={() =>
+                  history.push({
+                    pathname: "/Categories",
+                    state: {
+                      genreId: ficheFilm.genres?.[0]?.id,
+                      genreName: ficheFilm.genres?.[0]?.name,
+                    },
+                  })
+                }
+                style={{ cursor: "pointer" }} >
+                {ficheFilm.genres?.[0]?.name}
+              </span>
               <span className="separation">|</span>
               <span className="datefilm"> {formatDate(ficheFilm.release_date)} </span>
             </div>
@@ -281,10 +294,10 @@ const Movie = () => {
           >
             <button
               onClick={() => setShowTrailer(false)}
-             className="xfermeture"
+              className="xfermeture"
               aria-label="Close trailer"
             >
-             <i className="fa-solid fa-xmark"></i>
+              <i className="fa-solid fa-xmark"></i>
             </button>
             <iframe
               width="100%"

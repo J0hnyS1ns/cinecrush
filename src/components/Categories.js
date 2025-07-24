@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
 const CategoriesPage = () => {
     const [movies, setMovies] = useState([]);
@@ -8,6 +8,7 @@ const CategoriesPage = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 9;
     const history = useHistory();
+    const location = useLocation();
 
     const options = {
         method: 'GET',
@@ -23,12 +24,14 @@ const CategoriesPage = () => {
             .then((res) => res.json())
             .then((data) => {
                 setGenres(data.genres);
-                if (data.genres.length > 0) {
+                if (location.state?.genreId) {
+                    setSelectedGenreId(parseInt(location.state.genreId));
+                } else if (data.genres.length > 0) {
                     setSelectedGenreId(data.genres[0].id);
                 }
             })
-            .catch((err) => console.error("Error :", err));
-    }, []);
+            .catch((err) => console.error("Error genres:", err));
+    }, [location.state]);
 
     useEffect(() => {
         if (selectedGenreId) {
@@ -65,9 +68,9 @@ const CategoriesPage = () => {
                     src={require("../assets/CarouselCategories/image-category.png")}
                     alt="Banner"
                     className="catImage" />
-                {selectedGenre && (
-                    <h2 className="category-nom2">{selectedGenre.name}</h2>
-                )}
+                <h2 className="category-nom2">
+                    {selectedGenre?.name || location.state?.genreName || "Categories"}
+                </h2>
             </div>
             <div className="container containerCategories">
                 <div className="categoriesMovies">
@@ -95,7 +98,7 @@ const CategoriesPage = () => {
                                     alt={movie.title} />
                             </div>
                         ))}
-                    </div>   
+                    </div>
                     <div className="">
                         {pages.map((pageNumber) => (
                             <button
