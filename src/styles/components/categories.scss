@@ -10,8 +10,8 @@
     bottom: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
     color: white;
+    justify-content: center;
     font-weight: bold;
     background-color: rgba(0, 0, 0, 0.5);
     height: 100%;
@@ -31,8 +31,32 @@
 
 .categoriesMovies {
     border: solid 3px #001F29;
-    height: 515px;
-    padding: 25px 30px 0 0;
+    height: 100%;
+    padding: 25px;
+
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            cursor: pointer;
+            padding: 10px 15px;
+            color: white;
+            transition: background-color 0.3s ease, border-left 0.3s ease, color 0.3s ease;
+
+            &.active {
+                font-weight: bold;
+                color: $corailf;
+            }
+
+            &:not(.active):hover {
+                background-color: rgba(0, 0, 0, 0.2);
+                color: $corailp;
+                width: 100%;
+            }
+        }
+    }
+
 }
 
 .selectedMovies {
@@ -43,4 +67,91 @@
 
 .posterMovies img {
     width: 100%;
+}
+
+ul li.selected {
+    background-color: #ffffff22;
+    font-weight: bold;
+}
+
+ul li.unselected {
+    opacity: 0.7;
+}
+
+ul li.unselected:hover {
+    opacity: 1;
+}
+
+.posterMovies {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+    transition: transform 0.4s ease;
+    
+
+  .img-container {
+     height: 500px;
+    position: relative;
+    overflow: hidden;
+
+    img.movie-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease, filter 0.4s ease;
+      display: block;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: transparent;
+      transition: background-color 0.4s ease;
+      z-index: 1;
+    }
+
+    .movie-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 14px 10px;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  color: $bleuf;
+  backdrop-filter: blur(3px);
+  background-color: rgba(255, 255, 255, 0.1); // léger voile blanc flouté
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 2;
+  height: 50%;
+}
+
+  }
+
+  &:hover {
+    transform: scale(1.02);
+    z-index: 2;
+
+    .img-container {
+      img.movie-image {
+        filter: grayscale(100%);
+      }
+
+      &::after {
+        background-color: rgba(255, 200, 190, 0.4);
+      }
+
+      .movie-title {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
 }

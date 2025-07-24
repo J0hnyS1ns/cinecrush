@@ -63,8 +63,8 @@
 }
 
 .category-carte:hover .category-nom {
-  color: black;
+  color: $bleuf;
   font-weight: 800;
-  text-shadow: 1px 1px 8px white;
   transition: color 0.3s ease;
+ height: 100%;
 }
