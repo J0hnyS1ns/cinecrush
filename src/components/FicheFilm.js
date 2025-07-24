@@ -20,7 +20,9 @@ const Movie = () => {
   const [acteurs, setActeurs] = useState([]);
   const [sameCategory, setSameCategory] = useState([]);
   const [showTrailer, setShowTrailer] = useState(false); // <-- état modale trailer
+  const [liked, setLiked] = useState(false);
   const history = useHistory();
+
 
   useEffect(() => {
     const options = {
@@ -51,6 +53,9 @@ const Movie = () => {
         if (data.genres?.[0]?.id) {
           sameCategory(data.genres[0].id, data.id);
         }
+        const stored = JSON.parse(localStorage.getItem("likedMovies")) || [];
+        const isAlreadyLiked = stored.some((m) => m.id === data.id);
+        setLiked(isAlreadyLiked);
       })
       .catch((err) => console.error("Error :", err));
 
@@ -72,6 +77,19 @@ const Movie = () => {
       })
       .catch((err) => console.error("Error :", err));
   }, [id]);
+
+  const handleLike = () => {
+    setLiked(!liked);
+    const stored = JSON.parse(localStorage.getItem("likedMovies")) || [];
+
+    if (!liked) {
+      const newList = [...stored, ficheFilm];
+      localStorage.setItem("likedMovies", JSON.stringify(newList));
+    } else {
+      const filtered = stored.filter((m) => m.id !== ficheFilm.id);
+      localStorage.setItem("likedMovies", JSON.stringify(filtered));
+    }
+  };
 
   // état pour stocker la clé youtube du trailer
   const [trailerKey, setTrailerKey] = useState(null);
@@ -173,9 +191,8 @@ const Movie = () => {
           </div>
           <div>
             <span className="titlefilm">{ficheFilm.title}</span>{" "}
-            <span className="heart">
-              {" "}
-              <i className="bi bi-heart"></i>
+            <span className="heart" onClick={handleLike} style={{ cursor: "pointer" }}>
+              <i className={liked ? "bi bi-heart-fill" : "bi bi-heart"}></i>
             </span>
             <span className="ratingfilm">{stars(ficheFilm.vote_average)}</span>
             <div className="mb-2 dateetgenre">

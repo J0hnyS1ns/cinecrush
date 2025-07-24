@@ -6,6 +6,7 @@ import FicheFilm from "./pages/FicheFilm";
 import Acteur from "./pages/FicheActeur";
 import APropos from "./pages/APropos";
 import Recherche from "./pages/Recherche";
+import Favorite from "./pages/Favoris";
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/acteur/:id" exact component={Acteur} />
         <Route path="/About" exact component={APropos} />
         <Route path="/Recherche" exact component={Recherche} />
+        <Route path="/Favorites" component={Favorite} />
       </Switch>
     </BrowserRouter>
   )

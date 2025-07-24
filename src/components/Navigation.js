@@ -46,7 +46,10 @@ const Navigation = () => {
                             <i className="bi bi-search"></i>
                         </span>
                     </div>
-                    <span className="ms-4" style={{ height: 30 }}>
+                    <span
+                        className="ms-4"
+                        style={{ height: 30, cursor: "pointer" }}
+                        onClick={() => history.push("/Favorites")} >
                         <i className="bi bi-heart-fill coeur"></i>
                     </span>
                 </nav>
