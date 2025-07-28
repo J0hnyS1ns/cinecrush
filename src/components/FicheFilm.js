@@ -132,7 +132,7 @@ const Movie = () => {
       "September",
       "October",
       "November",
-      "Décember",
+      "December",
     ];
     const day = date.getDate();
     const month = months[date.getMonth()];
@@ -261,7 +261,7 @@ const Movie = () => {
         <div>
           <div className="mb-4 mt-5 titreR">
             <span className="text-white">IN THE </span>
-            <span> SAME CATEGORY</span>
+            <span>SAME CATEGORY</span>
           </div>
           <div className="carousel-wrapper">
             <Slider {...settings}>
