@@ -174,7 +174,7 @@ const Movie = () => {
               src={
                 ficheFilm.poster_path
                   ? `https://image.tmdb.org/t/p/w500${ficheFilm.poster_path}`
-                  : require("../assets/Placeholder/Placeholder.png")
+                  : require("../assets/Placeholder/Placeholder.jpg")
               }
               alt={ficheFilm.title}
               className="placeholder2"
@@ -183,7 +183,7 @@ const Movie = () => {
               src={
                 ficheFilm.poster_path
                   ? `https://image.tmdb.org/t/p/w500${ficheFilm.poster_path}`
-                  : require("../assets/Placeholder/Placeholder.png")
+                  : require("../assets/Placeholder/Placeholder.jpg")
               }
               alt={ficheFilm.title}
               className="placeholder2 reflection"
@@ -241,7 +241,7 @@ const Movie = () => {
                       src={
                         acteur.profile_path
                           ? `https://image.tmdb.org/t/p/w200${acteur.profile_path}`
-                          : require("../assets/Placeholder/Placeholder.png")
+                          : require("../assets/Placeholder/Placeholder.jpg")
                       }
                       alt={acteur.title}
                       className="d-flex img-inside"
@@ -276,7 +276,7 @@ const Movie = () => {
                     src={
                       movie.poster_path
                         ? `https://image.tmdb.org/t/p/w300${movie.poster_path}`
-                        : require("../assets/Placeholder/Placeholder.png")
+                        : require("../assets/Placeholder/Placeholder.jpg")
                     }
                     alt={movie.title}
                     className="placeholder1 category-carte"

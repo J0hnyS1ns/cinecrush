@@ -35,7 +35,7 @@ const Favorites = () => {
                             <img
                                 src={movie.poster_path
                                     ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-                                    : require("../assets/Placeholder/Placeholder.png")
+                                    : require("../assets/Placeholder/Placeholder.jpg")
                                 }
                                 alt={movie.title}
                                 style={{ width: "100%", cursor: "pointer" }}
