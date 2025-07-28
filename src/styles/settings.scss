@@ -37,7 +37,6 @@ a:visited {
 .carousel-wrapper {
   position: relative;
   overflow: hidden;
-  /* masque ce qui dépasse */
 }
 
 .carousel-wrapper::before,
@@ -46,12 +45,10 @@ a:visited {
   position: absolute;
   top: 0;
   width: 200px;
-  /* largeur du dégradé */
   height: 100%;
   z-index: 23;
-  /* au-dessus des slides */
   pointer-events: none;
-  /* ne bloque pas les clics */
+
 }
 
 .carousel-wrapper::before {
@@ -242,4 +239,36 @@ body {
  
   filter: contrast(150%);
 
+}
+
+.changementPage{
+  color: $gris;
+  font-size: 18px;
+  background-color: transparent;
+  padding: 10px;
+  box-shadow: none;
+  border: none;
+  text-align: center;
+}
+
+.changementPage:hover{
+  color: $corailp;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+gap: 5px;
+  margin-top: 1rem;
+  flex-wrap: wrap; // utile si jamais y'a beaucoup de pages
+}
+
+.activePage {
+  transform: scale(1.3);
+  color: $corailf; 
+  transition: transform 0.3s ease;
+}
+
+.caps{
+    text-transform:uppercase;
 }

@@ -118,7 +118,7 @@ const Movie = () => {
   };
 
   const formatDate = (dateString) => {
-    if (!dateString) return "Date inconnue";
+    if (!dateString) return "Unknown date";
     const date = new Date(dateString);
     const months = [
       "January",

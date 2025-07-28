@@ -69,7 +69,7 @@ const CategoriesPage = () => {
           alt="Banner"
           className="catImage"
         />
-        <h2 className="category-nom2">
+        <h2 className="category-nom2 caps">
           {selectedGenre?.name || location.state?.genreName || "Categories"}
         </h2>
       </div>
@@ -112,12 +112,12 @@ const CategoriesPage = () => {
               </div>
             ))}
           </div>
-          <div>
+          <div className="mt-4 pagination-container">
             {pages.map((pageNumber) => (
               <button
                 key={pageNumber}
                 onClick={() => setCurrentPage(pageNumber)}
-                className=""
+                className={`changementPage ${currentPage === pageNumber ? "activePage" : ""}`}
               >
                 {pageNumber}
               </button>
