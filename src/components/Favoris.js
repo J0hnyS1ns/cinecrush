@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 
 const Favorites = () => {
     const [likedMovies, setLikedMovies] = useState([]);
+    const [hoveredMovieId, setHoveredMovieId] = useState(null);
     const history = useHistory();
 
     useEffect(() => {
@@ -23,7 +24,7 @@ const Favorites = () => {
     return (
         <div className="container hautpage">
             <div className="mb-4 mt-5 favoritesMovies text-center">
-                <span className="text-white">MY FAVORITES</span>
+                <span className="text-white">MY FAVORITES </span>
                 <span>MOVIES</span>
             </div>
             {likedMovies.length === 0 ? (
@@ -39,12 +40,16 @@ const Favorites = () => {
                                 }
                                 alt={movie.title}
                                 style={{ width: "100%", cursor: "pointer" }}
-                                onClick={() => handleClick(movie.id)} />
+                                onClick={() => handleClick(movie.id)}
+                            />
                             <button
                                 onClick={() => removeFromFavorites(movie.id)}
+                                onMouseEnter={() => setHoveredMovieId(movie.id)}
+                                onMouseLeave={() => setHoveredMovieId(null)}
                                 className="btn btn-sm remove"
-                                title="Remove from favorites" >
-                                <i className="bi bi-x-lg"></i>
+                                title="Remove from favorites"
+                            >
+                                <i className={`bi ${hoveredMovieId === movie.id ? "bi-heart" : "bi-heart-fill"}`}></i>
                             </button>
                         </div>
                     ))}

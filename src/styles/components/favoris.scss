@@ -1,15 +1,21 @@
-.favoritesMovies {
-    color: #FC7658;
-    font-size: 30px;
-    font-weight: 600;
-}
-
 .remove {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    border-radius: 50%;
-    padding: 4px 8px;
-    background-color: #FFC8BE;
-    color: #001214;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 50%;
+  padding: 4px 8px;
+  cursor: pointer;
+  color: $corailp;
+
+  i {
+    font-size: 30px;
+   
+
+  }
+
+  &:hover i {
+
+
+    color: $corailp;
+  }
 }

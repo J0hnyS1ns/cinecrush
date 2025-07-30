@@ -213,7 +213,7 @@ body {
 
     &:hover .img-inside {
         transform: scale(1.05);
-;
+
         
     }
 }
@@ -271,4 +271,12 @@ gap: 5px;
 
 .caps{
     text-transform:uppercase;
+}
+
+.corailf{
+  color: $corailf;
+}
+
+.textgris{
+  color: $gris;
 }
