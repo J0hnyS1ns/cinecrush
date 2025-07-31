@@ -109,7 +109,7 @@ const FicheActeur = () => {
           <div className="mb-4 mt-5 titreR">
             <span className="text-white">WITH THE</span> SAME ACTOR
           </div>
-          <div className="carousel-wrapper">
+          <div className="carousel-wrapper sameActeur">
             <Slider {...settings}>
               {sameActor.map((movie) => (
                 <div

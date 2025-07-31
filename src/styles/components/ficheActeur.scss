@@ -14,3 +14,12 @@
 .actor {
     box-shadow: -22px -22px 0px $gris;
 }
+
+.sameActeur {
+    .slick-track {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center;
+        gap: 30px;
+    }
+}
