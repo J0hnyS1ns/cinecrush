@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
@@ -44,6 +44,10 @@ const About = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [fadeClass, setFadeClass] = useState("fade-text");
 
+  useEffect(() => {
+    setFadeClass("fade-text active");
+  }, []);
+
   const settings = {
     centerMode: true,
     centerPadding: "0px",
@@ -75,7 +79,7 @@ const About = () => {
     ],
   };
 
-  
+
 
   return (
     <div className="container text-center about">
@@ -88,9 +92,8 @@ const About = () => {
           {teams.map((team, index) => (
             <div
               key={team.id}
-              className={`nofocus slide-wrapper ${
-                index === activeIndex ? "active-slide" : "inactive-slide"
-              }`}
+              className={`slide-wrapper ${index === activeIndex ? "active-slide" : "inactive-slide"
+                }`}
             >
               <img src={team.image} alt={team.name} className="team-image" />
             </div>
