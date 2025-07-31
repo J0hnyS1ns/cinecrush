@@ -88,7 +88,7 @@ const About = () => {
           {teams.map((team, index) => (
             <div
               key={team.id}
-              className={`slide-wrapper ${
+              className={`nofocus slide-wrapper ${
                 index === activeIndex ? "active-slide" : "inactive-slide"
               }`}
             >

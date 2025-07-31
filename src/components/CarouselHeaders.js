@@ -37,7 +37,7 @@ return (
       <h1 className="headertitle">
         Check out the <br/> <span className="corailp" > TOP-RATED </span> SERIES!
       </h1>
-      <button className="buttonborder buttonheader" onClick={scrollToTopRated}>See more</button>
+      <button className="buttonborder buttonheader nofocus" onClick={scrollToTopRated}>See more</button>
     </div>
         <Slider {...settings}>
             {slides.map((item) => (
