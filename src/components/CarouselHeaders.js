@@ -19,7 +19,7 @@ const slides = [
     },
 ];
 
-const CarouselHeaders = () => {
+const CarouselHeaders = ({ scrollToTopRated }) => {
     const settings = {
         dots: true,
         arrows: false,
@@ -35,9 +35,9 @@ return (
   <div className="carousel-top">
     <div className="overlay-text">
       <h1 className="headertitle">
-        Check out the <br/> <span className="corailp"> TOP-RATED </span> SERIES!
+        Check out the <br/> <span className="corailp" > TOP-RATED </span> SERIES!
       </h1>
-      <button className="buttonborder buttonheader">See more</button>
+      <button className="buttonborder buttonheader" onClick={scrollToTopRated}>See more</button>
     </div>
         <Slider {...settings}>
             {slides.map((item) => (

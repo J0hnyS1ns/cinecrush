@@ -20,7 +20,7 @@ const teams = [
     image: require("../assets/CarouselTeams/Sophie.jpg"),
     name: "Sophie",
     about:
-      "She's a curious and creative front-end integrator with a passion for smooth, thoughtful interfaces. In the CineCrush project, She's responsible for integrating the visual experience using SCSS and React. Her goal? That everything not only looks right, but feels right — intuitive, fluid, and just like home.",
+      "She's a curious and creative front-end integrator with a passion for smooth, thoughtful interfaces. In the CineCrush project, she's responsible for integrating the visual experience using SCSS and React. Her goal? That everything not only looks right, but feels right — intuitive, fluid, and just like home.",
     quote: "Good code whispers comfort into every click. If it feels natural, I’ve done my job.",
   },
   {
@@ -74,6 +74,8 @@ const About = () => {
       },
     ],
   };
+
+  
 
   return (
     <div className="container text-center about">

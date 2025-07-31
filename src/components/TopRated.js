@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, forwardRef } from "react";
 import Slider from "react-slick";
 import { useHistory } from "react-router-dom";
 
-import "@fortawesome/fontawesome-free/css/all.min.css"; // Import des icônes
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -20,7 +20,7 @@ const PrevArrow = ({ onClick }) => (
   </div>
 );
 
-const TopRated = () => {
+const TopRated = forwardRef((props, ref) => {
   const [movies, setMovies] = useState([]);
   const history = useHistory();
 
@@ -76,9 +76,9 @@ const TopRated = () => {
   };
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid" ref={ref}>
       <div className="mb-4 mt-5 titreR text-center">
-        <span className="text-white">TOP </span>
+        <span className="text-white" id="toprated">TOP </span>
         <span> RATED</span>
       </div>
       <div className="carousel-wrapper">
@@ -100,6 +100,7 @@ const TopRated = () => {
       </div>
     </div>
   );
-};
+});
+
 
 export default TopRated;

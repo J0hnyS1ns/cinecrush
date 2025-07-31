@@ -280,3 +280,8 @@ gap: 5px;
 .textgris{
   color: $gris;
 }
+
+.buttonheader:focus {
+  outline: none;
+  box-shadow: none;
+}

@@ -36,3 +36,13 @@
     background-color: #001F29;
     margin-top: 80px;
 }
+
+.transition-logo {
+    opacity: 0;
+        transition: all 1s ease-in-out;
+}
+
+.transition-logo.visible {
+    opacity: 1;
+   
+}

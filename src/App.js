@@ -10,6 +10,8 @@ import Favorite from "./pages/Favoris";
 
 
 const App = () => {
+
+
   return (
     <BrowserRouter>
       <Switch>

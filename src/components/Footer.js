@@ -1,5 +1,33 @@
+import React, { useEffect, useRef, useState } from "react";
 
 const Footer = () => {
+    const logoRef = useRef(null);
+    const [logoVisible, setLogoVisible] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setLogoVisible(true);
+                    observer.unobserve(entry.target);
+                }
+            },
+            {
+                threshold: 0.1,
+            }
+        );
+
+        if (logoRef.current) {
+            observer.observe(logoRef.current);
+        }
+
+        return () => {
+            if (logoRef.current) {
+                observer.unobserve(logoRef.current);
+            }
+        };
+    }, []);
+
     return (
         <div className="footer">
             <div className="container">
@@ -7,7 +35,12 @@ const Footer = () => {
 
                     <div className="col-md-6">
                         <div className="mb-md-0">
-                            <div className="logo-container">
+                            <div
+                                className={`logo-container transition-logo ${
+                                    logoVisible ? "visible" : ""
+                                }`}
+                                ref={logoRef}
+                            >
                                 <img src="../assets/Logo/logo.svg" alt="CineCrush" />
                             </div>
                         </div>
@@ -16,7 +49,6 @@ const Footer = () => {
                             <span className="slogan-part2">crush.</span>
                         </p>
                     </div>
-
 
                     <div className="col-md-6">
                         <div className="text-md-end">
