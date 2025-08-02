@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import Slider from "react-slick";
 
@@ -13,6 +13,43 @@ const PrevArrow = ({ onClick }) => (
     <i className="fa-solid fa-chevron-left"></i>
   </div>
 );
+
+const ExpandableText = ({ text }) => {
+  const [expanded, setExpanded] = useState(false);
+  const [isOverflowing, setIsOverflowing] = useState(false);
+  const textRef = useRef();
+
+  const MAX_HEIGHT = 500; // hauteur fixe en pixels
+
+  useEffect(() => {
+    if (textRef.current) {
+      setIsOverflowing(textRef.current.scrollHeight > MAX_HEIGHT);
+    }
+  }, [text]);
+
+  return (
+    <div className="expandable-wrapper">
+      <div
+        className={`descriptionacteur ${expanded ? "expanded" : "collapsed"}`}
+   style={{ maxHeight: expanded ? "none" : "300px" }}
+
+        ref={textRef}
+      >
+        {text}
+        {!expanded && isOverflowing && <div className="fade-overlay" />}
+      </div>
+      {isOverflowing && (
+        <button
+          className="toggle-button"
+          onClick={() => setExpanded((prev) => !prev)}
+        >
+          {expanded ? "Show less" : "Show more"}
+        </button>
+      )}
+    </div>
+  );
+};
+
 
 const FicheActeur = () => {
   const { id } = useParams();
@@ -97,7 +134,7 @@ const FicheActeur = () => {
 
           <div>
             <h1 className="titlefilm">{acteur.name}</h1>
-            <p className="synopsis descriptionacteur">{acteur.biography || "Biography not available."}</p>
+            <ExpandableText text={acteur.biography || "Biography not available."} />
           </div>
         </div>
       ) : (
@@ -114,7 +151,6 @@ const FicheActeur = () => {
               {sameActor.map((movie) => (
                 <div
                   key={movie.id}
-                  className=""
                   onClick={() => handleClick(movie.id)}
                   style={{ cursor: "pointer" }}
                 >
