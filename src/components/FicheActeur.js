@@ -19,7 +19,7 @@ const ExpandableText = ({ text }) => {
   const [isOverflowing, setIsOverflowing] = useState(false);
   const textRef = useRef();
 
-  const MAX_HEIGHT = 500; // hauteur fixe en pixels
+  const MAX_HEIGHT = 200; // hauteur fixe en pixels
 
   useEffect(() => {
     if (textRef.current) {
