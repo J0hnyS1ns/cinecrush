@@ -23,9 +23,9 @@ const Favorites = () => {
 
     return (
         <div className="container hautpage">
-            <div className="mb-4 mt-5 favoritesMovies text-center">
+            <div className="mb-4 mt-5 text-center fs-3">
                 <span className="text-white">MY FAVORITES </span>
-                <span>MOVIES</span>
+                <span className="corailf">MOVIES</span>
             </div>
             {likedMovies.length === 0 ? (
                 <p className="text-white">No movies added to favorites.</p>

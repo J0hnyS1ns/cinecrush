@@ -1,96 +1,104 @@
 .headerImages {
-    position: relative;
+  position: relative;
 }
 
 .category-nom2 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    color: white;
-    justify-content: center;
-    font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.5);
-    height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  color: white;
+  justify-content: center;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
 }
 
 .catImage {
-    width: 100%;
-    height: 445px;
+  width: 100%;
+  height: 445px;
 }
 
 .containerCategories {
-    margin-top: 50px;
-    display: flex;
-    gap: 30px;
-    cursor: pointer;
+  margin-top: 50px;
+  display: flex;
+  gap: 30px;
+  cursor: pointer;
 }
 
 .categoriesMovies {
-    border: solid 3px #001F29;
-    height: 100%;
-    padding: 25px;
+  border: solid 3px #001F29;
+  height: 100%;
+  padding: 16px;
 
-    ul {
-        list-style: none;
-        padding: 0;
+  .text-white {
+    font-size: 14px;
+  }
 
-        li {
-            cursor: pointer;
-            padding: 10px 15px;
-            color: white;
-            transition: background-color 0.3s ease, border-left 0.3s ease, color 0.3s ease;
+  ul {
+    list-style: none;
+    padding: 0;
 
-            &.active {
-                font-weight: bold;
-                color: $corailf;
-            }
+    li {
+      cursor: pointer;
+      padding: 10px 15px;
+      color: white;
+      transition: background-color 0.3s ease, border-left 0.3s ease, color 0.3s ease;
 
-            &:not(.active):hover {
-                background-color: rgba(0, 0, 0, 0.2);
-                color: $corailp;
-                width: 100%;
-            }
-        }
+      &.active {
+        font-weight: bold;
+        color: $corailf;
+      }
+
+      &:not(.active):hover {
+        background-color: rgba(0, 0, 0, 0.2);
+        color: $corailp;
+        width: 100%;
+      }
     }
+  }
 
 }
+
+
 
 .selectedMovies {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
 }
 
+
+
 .posterMovies img {
-    width: 100%;
+  width: 100%;
 }
 
 ul li.selected {
-    background-color: #ffffff22;
-    font-weight: bold;
+  background-color: #ffffff22;
+  font-weight: bold;
 }
 
 ul li.unselected {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
 ul li.unselected:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 .posterMovies {
   position: relative;
   cursor: pointer;
   overflow: hidden;
-    transition: transform 0.4s ease;
-    
+  transition: transform 0.4s ease;
+
 
   .img-container {
-     height: 500px;
+    height: 500px;
     position: relative;
     overflow: hidden;
 
@@ -115,23 +123,23 @@ ul li.unselected:hover {
     }
 
     .movie-title {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 14px 10px;
-  font-size: 28px;
-  font-weight: bold;
-  text-align: center;
-  color: $bleuf;
-  backdrop-filter: blur(3px);
-  background-color: rgba(255, 255, 255, 0.1); // léger voile blanc flouté
-  opacity: 0;
-  transform: translateY(100%);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 2;
-  height: 50%;
-}
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 14px 10px;
+      font-size: 28px;
+      font-weight: bold;
+      text-align: center;
+      color: $bleuf;
+      backdrop-filter: blur(3px);
+      background-color: rgba(255, 255, 255, 0.1); // léger voile blanc flouté
+      opacity: 0;
+      transform: translateY(100%);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      z-index: 2;
+      height: 50%;
+    }
 
   }
 
@@ -142,7 +150,7 @@ ul li.unselected:hover {
     .img-container {
       img.movie-image {
         filter: grayscale(100%);
-        
+
       }
 
       &::after {
@@ -153,6 +161,30 @@ ul li.unselected:hover {
         opacity: 1;
         transform: translateY(0);
       }
+    }
+  }
+}
+
+// responsive 
+
+@media (min-width: 1200px) {
+  .selectedMovies {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .selectedMovies {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 576px) {
+  .categoriesMovies {
+    padding: 25px;
+
+    .text-white {
+      font-size: 16px;
     }
   }
 }
