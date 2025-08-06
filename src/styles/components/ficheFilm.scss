@@ -1,8 +1,16 @@
 .heart {
-    color: $corailp;
-    font-size: 40px;
-    padding-left: 20px;
+  color: $corailp;
+  font-size: 40px;
+  padding-left: 20px;
+  display: inline-block;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1) translateY(-5px);
+ 
+  }
 }
+
 
 .ratingfilm {
     color: $corailp;
