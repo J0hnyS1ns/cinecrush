@@ -93,13 +93,30 @@ const FicheActeur = () => {
     prevArrow: <PrevArrow />,
     responsive: [
       {
+        breakpoint: 1400,
+        settings: { slidesToShow: 3.4         },
+      },
+
+     {
+        breakpoint: 1200,
+        settings: { slidesToShow: 3.1         },
+      },
+      {
         breakpoint: 1024,
         settings: { slidesToShow: 3 },
       },
+       {
+        breakpoint: 992,
+        settings: { slidesToShow: 2.2 },
+      },
       {
         breakpoint: 768,
-        settings: { slidesToShow: 1 },
+        settings: { slidesToShow: 1.6 },
       },
+      {
+        breakpoint: 576,
+        settings: { slidesToShow: 1},
+      }
     ],
   };
 

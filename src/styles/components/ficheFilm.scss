@@ -44,7 +44,7 @@
 
 
 .acteurs {
-    max-width: 65%;
+    max-width: 90%;
 
 
     .acteurname {
@@ -76,3 +76,23 @@
     cursor: pointer;
     font-weight: bold;
 }
+.hautpage{
+      flex-direction: column;
+}
+
+
+
+@media (min-width: 992px) {
+ .hautpage{
+  flex-direction: row;
+ }
+  .acteurs {
+    max-width: 90% !important;
+
+
+}
+
+
+
+}
+
