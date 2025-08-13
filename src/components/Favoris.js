@@ -30,7 +30,7 @@ const Favorites = () => {
             {likedMovies.length === 0 ? (
                 <p className="text-white">No movies added to favorites.</p>
             ) : (
-                <div className="d-flex flex-wrap gap-4">
+                <div className="d-flex flex-wrap gap-4 flexFavoris">
                     {likedMovies.map((movie) => (
                         <div key={movie.id} style={{ width: "180px", position: "relative" }}>
                             <img
