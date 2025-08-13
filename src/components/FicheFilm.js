@@ -101,7 +101,7 @@ const Movie = () => {
     const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
 
     return (
-      <div style={{ display: "flex", gap: "10px" }}>
+      <div style={{ display: "flex", gap: "10px" }} className="ratingBloc">
         {Array(fullStars)
           .fill()
           .map((_, i) => (
@@ -207,10 +207,13 @@ const Movie = () => {
             />
           </div>
           <div>
+            <div className="text-center text-lg-start">
             <span className="titlefilm">{ficheFilm.title}</span>{" "}
+           
             <span className="heart" onClick={handleLike} style={{ cursor: "pointer" }}>
               <i className={liked ? "bi bi-heart-fill" : "bi bi-heart"}></i>
             </span>
+             </div>
             <span className="ratingfilm">{stars(ficheFilm.vote_average)}</span>
             <div className="mb-2 dateetgenre">
               <span

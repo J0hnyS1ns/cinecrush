@@ -56,7 +56,7 @@
 
 .blocbuttons {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding-bottom: 30px;
     margin-left: -2.7%;
 }
@@ -81,6 +81,14 @@
 
 }
 
+.synopsis, .dateetgenre{
+    text-align: center;
+}
+
+.ratingBloc{
+   justify-content: center; 
+   margin-bottom: 20px;
+}
 
 
 @media (min-width: 992px) {
@@ -91,9 +99,22 @@
     max-width: 90% !important;
 
 
+.synopsis{
+    text-align: left;
+}
+
+}
+    .blocbuttons {
+    flex-direction: row !important;
+
+}
+
+.ratingBloc{
+   justify-content: flex-start; 
 }
 
 
-
+.synopsis, .titlefilm, .dateetgenre{
+    text-align: left;
 }
-
+}
