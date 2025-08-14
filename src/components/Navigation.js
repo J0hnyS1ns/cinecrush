@@ -39,9 +39,9 @@ const Navigation = () => {
             </button>
 
             {/* Logo centré */}
-            <NavLink exact to="/" className="nav-link p-0">
-              <img src="../assets/Logo/logo.svg" alt="logo" style={{ height: "40px" }} />
-            </NavLink>
+        <NavLink exact to="/" className="nav-link p-0">
+  <img src="/assets/Logo/Logo.svg" alt="logo" style={{ height: "40px" }} />
+</NavLink>
 
             {/* Loupe + Coeur à droite */}
             <div className="mobile-icons">
@@ -95,7 +95,7 @@ const Navigation = () => {
           <div className="d-none d-lg-flex w-100 justify-content-between align-items-center">
             <div className="d-flex align-items-center gap-5">
               <NavLink exact to="/" activeClassName="nav-active" className="nav-link p-0">
-                <img src="../assets/Logo/logo.svg" alt="logo" style={{ height: "40px" }} />
+                <img src="/assets/Logo/Logo.svg" alt="logo" style={{ height: "40px" }} />
               </NavLink>
               <NavLink exact to="/About" activeClassName="nav-active" className="text-white nav-link navlink">
                 ABOUT

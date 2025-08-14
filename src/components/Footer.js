@@ -41,7 +41,7 @@ const Footer = () => {
                                 }`}
                                 ref={logoRef}
                             >
-                                <img src="../assets/Logo/logo.svg" alt="CineCrush" />
+                                <img src="/assets/Logo/Logo.svg" alt="CineCrush" />
                             </div>
                         </div>
                         <p className="mb-0 fst-italic">
