@@ -105,7 +105,7 @@ const About = () => {
         <h2>
           About <span className="corailf">{teams[activeIndex].name}</span>
         </h2>
-        <p className="synopsis textgris moinslarge">
+        <p className="synopsis textgris moinslarge text-center">
           {teams[activeIndex].about}
         </p>
         <p className="quote">
