@@ -1,14 +1,23 @@
+.footer{
+    height: 250px;
+    display:flex;
+    align-items: center;
+    background-color: #001F29;
+    margin-top: 80px;
+    padding: 16px;
 
 .logo-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 107px;
-    height: 107px;
+    width: 70px;
+    height: 70px;
+
+   
 }
 
 .reseaux {
-    font-size: 30px;
+    font-size: 23px;
     color: #FFC8BE;
 }
 
@@ -18,7 +27,7 @@
 
 .slogan-part1, .slogan-part2{
     font-weight: 600;
-    font-size: 22px;
+    font-size: 18px;
     font-style: italic;
 }
 .slogan-part1 {
@@ -29,13 +38,7 @@
     color: #FC7658;
 }
 
-.footer{
-    height: 250px;
-    display:flex;
-    align-items: center;
-    background-color: #001F29;
-    margin-top: 80px;
-}
+
 
 .transition-logo {
     opacity: 0;
@@ -45,4 +48,30 @@
 .transition-logo.visible {
     opacity: 1;
    
+}
+
+
+@media (min-width: 768px) {
+.slogan-part1, .slogan-part2{
+    font-weight: 600;
+    font-size: 22px;
+    font-style: italic;
+}
+
+.logo-container {
+    width: 107px;
+    height: 107px;
+
+   
+}
+
+.reseaux {
+    font-size: 28px;
+    color: #FFC8BE;
+}
+
+
+
+    
+}
 }
